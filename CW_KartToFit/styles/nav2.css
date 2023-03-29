@@ -1,0 +1,55 @@
+#filter-div{
+    width: 100%;
+    height:55px;
+    margin: auto;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    display: flex;
+    
+}
+#filter-div>div{
+    width: 80%;
+    height: 80%;
+    display: flex;
+    margin: auto;
+    justify-content: space-between;
+    
+}
+.nav2>div:nth-child(1){
+    width: 70%;
+    padding-top: 10px;
+}
+.nav2>div:nth-child(2){
+    height: 100%;
+    width: 20%;
+}
+.nav2:nth-child(1)>div select{
+    width: 30%;
+    height: 80%;
+    
+}
+.wishlist img{
+    width: 110%;
+    height: 100%;
+}
+
+.wishlist button{
+    width: 30%;
+    height: 100%;
+    border: none;
+    background-color: white;
+    cursor: pointer;
+}
+.wishlist button:hover{
+    background-color: rgb(221, 103, 103);
+}
+#slideshow{
+    width: 80%;
+    margin: auto;
+}
+#slideshow>img{
+    width: 100%;
+}
+.pword{
+    margin: auto;
+    text-align: center;
+}
