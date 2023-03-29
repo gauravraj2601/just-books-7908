@@ -12,7 +12,15 @@
     display: flex;
     margin: auto;
     justify-content: space-between;
-    
+}
+#filter{
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+   cursor: pointer;
+}
+#filter:hover{
+    opacity: 0.7;
+
 }
 .nav2>div:nth-child(1){
     width: 70%;
@@ -41,6 +49,7 @@
 }
 .wishlist button:hover{
     background-color: rgb(221, 103, 103);
+   
 }
 #slideshow{
     width: 80%;

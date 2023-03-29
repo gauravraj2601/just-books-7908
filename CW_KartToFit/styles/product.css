@@ -1,0 +1,35 @@
+#product-container{
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    /* border: 1px solid red; */
+    margin: auto;
+    gap: 25px;
+  }
+  #product-container>div{
+    height: auto;
+    padding-left: 8px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    background-color: white;
+    padding-bottom: 20px;
+  }
+  #product-container>div>img{
+    width: 100%;
+  }
+  #product-container>div>button{
+   display: grid;
+   margin: auto;
+   border: none;
+   background-color: rgb(219, 96, 30);
+   border-radius: 5px;
+   font-size: 15px;
+   margin-bottom: 10px;
+   margin-top: 10px;
+   width: 60%;
+   color: white ;
+
+  }
+  #product-container button:nth-last-child(1){
+   background-color: rgb(217, 33, 135);
+  }
+ 

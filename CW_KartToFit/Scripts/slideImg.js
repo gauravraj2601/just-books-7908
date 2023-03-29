@@ -23,7 +23,4 @@ setInterval(function(){
 },2000)
 
 
-  // add event-listeners;
-//   const dis=document.querySelector("slideshow");
-//   dis.setAttribute("src",movieImages[currentImage])
-// slideshowFun()
+ 
