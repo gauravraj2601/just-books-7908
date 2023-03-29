@@ -12,6 +12,7 @@ let cartData= JSON.parse(localStorage.getItem("cart")) || [];
       let description= document.createElement("p");
       let category = document.createElement("h3");
       let remove= document.createElement("button");
+      let inc= document.createElement("div")
       let increment = document.createElement("button");
       let decrement =document.createElement("button");
       let quantity =document.createElement("span");
@@ -46,8 +47,8 @@ let cartData= JSON.parse(localStorage.getItem("cart")) || [];
           
       })
 
-
-      card.append(img,name,price,description,category,increment,quantity,decrement,remove);
+      inc.append(increment,quantity,decrement)
+      card.append(img,name,price,description,category,inc,remove);
       container.append(card)
 
     })

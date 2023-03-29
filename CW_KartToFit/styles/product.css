@@ -32,4 +32,8 @@
   #product-container button:nth-last-child(1){
    background-color: rgb(217, 33, 135);
   }
+  #slideshow{
+    margin-top: 5px;
+  }
+ 
  

@@ -17,10 +17,10 @@
     width: 100%;
   }
   #cart-container>div>button{
-   display: grid;
+   display: block;
    margin: auto;
    border: none;
-   background-color:  rgb(219, 96, 30);
+   background-color: rgb(224, 56, 56);
    border-radius: 5px;
    font-size: 15px;
    margin-bottom: 1px;
@@ -29,9 +29,59 @@
    color: rgb(255, 255, 255) ;
    cursor: pointer;
   }
-  #cart-container button:nth-last-child(2){
-    background-color: red;
+  
+  #cart-container>div>div{
+    /* background-color: red; */
+    display: flex;
+    justify-content: space-around;
+    margin: auto;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 10px;
+    
   }
+  #cart-container>div>div button{
+    width: 20%;
+    font-size: 15px;
+    background-color: rgb(224, 56, 56);
+    border: none;
+    border-radius: 3px;
+  }
+  #wishTitle{
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    background-color:  rgb(255, 255, 255);
+    width: 100%;
+    text-align: center;
+    color: rgb(176, 88, 41);
+    margin-bottom: 15px;
+    margin-top: 1px;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+.checkout{
+    display: flex;
+    align-items: center;
+    margin-right: 10%;
+}
+.checkout a button{
+    color: rgb(224, 56, 56); 
+    height: 70%;
+    font-size: 30px;
+    background-color: white;
+    border: ridge;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+}
+.checkout a button:hover{
+    background-color: rgb(219, 191, 176);
+}
+.total{   
+    margin-left: 25%;
+}
 /* ///////////////////////////////////////////////////////// */
 
   *{
@@ -48,7 +98,7 @@ body{
     display: grid;
     align-items: center;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-    margin-bottom: 50px;
+   
 }
 .nav{
     width: 80%;
@@ -70,10 +120,15 @@ body{
 .nav button img{
     width: 100%;
     height: 40px;
-
 }
-.nav button{
-    background-color: black;
+.nav>div:nth-child(1) button{
+    width: 130px;
+    height: 60px;
+    margin-top: -5px;
+}
+.nav>div:nth-child(1) button img{
+    width: 130px;
+    height: 100%;
 }
 #search{
     width: 50%;
@@ -85,35 +140,11 @@ body{
 #search:hover{
     opacity: 0.3;
 }
-/* #logbtn{
-   width: 80%; 
-   height: 35px;
-   border: none;
-   background-color: rgb(33, 196, 196);
-   border-radius: 5px;
-   color: white;
-   cursor: pointer;
-} */
+
 #logbtn:hover{
     background-color: rgb(42, 108, 108);
 }
-/* .nav>div{
-    width: auto;
-    
-    display: grid;
-    align-items: center;
-    background-color: red;
-    
-} */
+
 .nav button{
     cursor: pointer;
-}
-#wishTitle{
-    margin: auto;
-    color: rgb(245, 245, 245);
-    background-color:  rgb(217, 33, 135);
-    width: 90%;
-    text-align: center;
-    margin-bottom: 20px;
-
 }
