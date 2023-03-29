@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      body{
+        background-image: url("https://png.pngtree.com/thumb_back/fh260/back_our/20190625/ourmid/pngtree-fitness-exercise-run-banner-background-image_255468.jpg") ;
+       
+        background-repeat: no-repeat;
+        background-position: 50% ;
+        background-size: cover;
+      }
+      div{
+        display: grid;
+        justify-content: end;
+      }
+      div>h1:nth-child(2){
+        margin-top:-30px;
+      }
+    </style>
+</head>
+<body>
+      <div id="signup">
+        <h1>Please Enter Your Details for </h1>
+        <h1>Sign up Or Login</h1>
+        <form>
+          <input type="email" id="email" placeholder="Email">
+          <input type="password"  id="password" placeholder="Password">
+          <a href="./index.html"><input type="submit" value="Login" id="logbtn"> </a>
+        </form>
+      </div>
+      <div id="admin">
+        <h1>Please Enter Your Details for</h1>
+        <h1>Admin Login</h1>
+        <!-- <form>
+          <input type="email" id="email" placeholder="Email">
+          <input type="password"  id="password" placeholder="Password">
+          <input type="submit" value="Submit" />
+        </form> -->
+      </div>
+    
+</body>
+<script>
+  const form= document.querySelector("form");
+  let userData=JSON.parse(localStorage.getItem("user-data")) || []
+  console.log(userData)
+  let flag= false
+
+  form.addEventListener("submit",function(e){
+    e.preventDefault();
+    let Details={
+      email:form.email.value,
+      password: form.password.value,
+    }
+    userData.push(Details)
+    localStorage.setItem("user-data",JSON.stringify(userData))
+    
+  
+    for(let i=0; i<userData.length; i++){
+      if(form.email.value === userData[i].email && form.password.value === userData[i].password){
+       flag = true
+       break
+      }
+    }
+    if(flag){
+      alert = "Sign in Successful"
+    }
+    else{
+      alert ="Wrong Credentials"
+    }
+  })
+</script>
+</html>

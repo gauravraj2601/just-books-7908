@@ -1,0 +1,68 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color:rgb(255,255,255) ;
+}
+#container{
+    width: 100%;
+    height: 80px;
+    display: grid;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+.nav{
+    width: 80%;
+    height: 60%;
+    display: flex;
+    margin: auto;
+    justify-content: space-between;
+}
+#logo{
+    width: 10%;
+    height: auto
+}
+#cart-logo{
+    width: 100%;
+    height: 40px;
+}
+
+#cart-button{
+    width: 80px;
+   height: 40px;
+    background-color: white;
+    border: none;
+    padding-left: 20px;
+}
+
+#search{
+    width: 50%;
+    height: 80%;
+    font-size: 20px;
+    border-radius: 5px;
+    padding-top: 2px;
+}
+#search:hover{
+    opacity: 0.3;
+}
+#logbtn{
+   width: 80%; 
+   height: 35px;
+   border: none;
+   background-color: rgb(33, 196, 196);
+   border-radius: 5px;
+   color: white;
+   cursor: pointer;
+}
+#logbtn:hover{
+    background-color: rgb(42, 108, 108);
+}
+.nav>div{
+    width: 15%;
+    /* border: 1px solid black; */
+    display: grid;
+    align-items: center;
+    
+}
