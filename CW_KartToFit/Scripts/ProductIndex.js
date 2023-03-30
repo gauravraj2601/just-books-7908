@@ -13,12 +13,52 @@
       })
       displaydata(filtered)
     })
-   
+    let filterPrice = document.getElementById("filter-price");
+    filterPrice.addEventListener("change",function(){
+      if(filterPrice.value==""){
+        displaydata(Data);
+      }
+      else if(filterPrice.value=="LH"){
+        let filterPriceData= Data.sort((a,b)=>{
+          return Number(a.SP) - Number(b.SP);
+        })
+        displaydata(filterPriceData);
+      }
+      else if(filterPrice.value=="HL"){
+        let filterPriceData= Data.sort((a,b)=>{
+          return +b.SP - +a.SP;
+        })
+        displaydata(filterPriceData);
+      }
+    })
+
+   let filterReview = document.getElementById("filter-rating");
+    filterReview.addEventListener("change",function(){
+      if(filterReview.value==""){ 
+        displaydata(Data)
+      }
+      else if(filterReview.value=="LH"){
+        let filterReviewData= Data.sort((a,b)=>{
+          return a.rating - b.rating;
+        })
+        displaydata(filterReviewData);
+      }
+      else if(filterReview.value=="HL"){
+        let filterReviewData= Data.sort((a,b)=>{
+          return b.rating - a.rating;
+        })
+        displaydata(filterReviewData);
+      }
+     
+    })
+
+
     const filter =document.getElementById("filter")
     
     filter.addEventListener("change",function(){
       if(filter.value==""){
-        displaydata(Data)
+        // displaydata(Data)
+        location.reload();
       }
       else{
         let filteredData= Data.filter((el)=>{
@@ -30,6 +70,7 @@
     })
     
     const container= document.getElementById("product-container")
+    const container2= document.getElementById("product-container2")
     const cartData= JSON.parse(localStorage.getItem("cart")) || []
     const whishlistData =JSON.parse(localStorage.getItem("wishlist")) || []
 
@@ -38,8 +79,11 @@
     container.innerHTML=""
     arr.forEach((el)=>{
       let card= document.createElement("div");
+
+      let imgdiv= document.createElement("div")
       let img= document.createElement("img");
 
+      let detailsdiv= document.createElement("div")
       let revdiv= document.createElement("div");
       let rating=document.createElement("h3");
       let review=document.createElement("h3");
@@ -71,7 +115,7 @@
       img.src = el.src;
       name.innerText= el.name;
       price.innerText= el.price;
-      description.innerText= el.description;
+      description.innerText= "Category";
       Category.innerText= el.category;
       addCart.innerText= "Add To Cart"
       addWishlist.innerText = "Whishlist" 
@@ -97,10 +141,12 @@
         }
     })
       pricediv.append(sp,MRP,discount)
-      revdiv.append(rating,review,icon)
-      card.append(img,revdiv,name,description,Category,pricediv,addCart,addWishlist);
+      revdiv.append(rating,icon)
+      imgdiv.append(img)
+      detailsdiv.append(revdiv,name,review,description,Category,pricediv,addCart,addWishlist)
+      card.append(imgdiv,detailsdiv);
       container.append(card)
-
+      // container2.append(card)
     })
   }
 
