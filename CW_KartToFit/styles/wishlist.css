@@ -8,7 +8,6 @@
   }
   #cart-container>div{
     height: auto;
-    padding-left: 8px;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
     background-color: white;
     padding-bottom: 20px;
@@ -85,3 +84,25 @@ body{
     font-size: 130%;
 
 }
+
+  /* ///////// */
+  #icon{
+    width: 7%;
+  }
+  #revdiv{
+    display: flex;
+    gap: 10px;
+  }
+ #pricediv{
+  display: flex;
+  gap: 20px;
+ }
+ #pricediv h5{
+ 
+  color: rgb(26, 165, 165);
+ }
+ #pricediv h4{
+  text-decoration: line-through;
+  color: rgb(179, 94, 25);
+ }
+ 

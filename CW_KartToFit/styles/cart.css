@@ -30,7 +30,7 @@
    cursor: pointer;
   }
   
-  #cart-container>div>div{
+  #cart-container>div>div:nth-last-child(2){
     /* background-color: red; */
     display: flex;
     justify-content: space-around;
@@ -148,3 +148,26 @@ body{
 .nav button{
     cursor: pointer;
 }
+
+  /* ///////// */
+  #icon{
+    width: 7%;
+  }
+  #revdiv{
+    width: 90%;
+    display: flex;
+    gap: 15px;
+  }
+ #pricediv{
+  display: flex;
+  gap: 15px;
+ }
+ #pricediv h5{
+ 
+  color: rgb(26, 165, 165);
+ }
+ #pricediv h4{
+  text-decoration: line-through;
+  color: rgb(179, 94, 25);
+ }
+ 

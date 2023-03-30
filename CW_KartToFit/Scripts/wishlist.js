@@ -8,6 +8,16 @@ container.innerHTML="";
 data.forEach((el,index)=>{
 let card= document.createElement("div");
 let img= document.createElement("img");
+
+let revdiv= document.createElement("div");
+let review=document.createElement("h3");
+let rating=document.createElement("h3");
+let icon= document.createElement("img");
+let pricediv= document.createElement("div");
+let sp=document.createElement("h3");
+let MRP=document.createElement("h4");
+let discount= document.createElement("h5") 
+      
 let name= document.createElement("h2");
 let price = document.createElement("h3");
 let description= document.createElement("p");
@@ -15,11 +25,23 @@ let category = document.createElement("h3");
 let remove= document.createElement("button");
 let addCart= document.createElement("button");
 
+icon.setAttribute("id","icon");
+revdiv.setAttribute("id","revdiv");
+pricediv.setAttribute("id","pricediv");
+
+rating.innerText= `${el.rating}🌟`;
+review.innerText = el .review;
+icon.src= el.icon;
+sp.innerText =el.SP;
+MRP.innerText = el.MRP;
+discount.innerText = el.discount;
+
+
 addCart.innerText= "Add To Cart"
-img.src = el.img;
-name.innerText= el.brand;
-price.innerText= `₹${el.price}`;
-description.innerText= el.details;
+img.src = el.src;
+name.innerText= el.name;
+price.innerText= el.price;
+description.innerText= el.description;
 category.innerText= el.category;
 remove.innerText= "Remove"
 
@@ -42,8 +64,9 @@ addCart.addEventListener("click",function(){
   }
 })
 
-
-card.append(img,name,price,description,category,addCart,remove);
+pricediv.append(sp,MRP,discount)
+revdiv.append(rating,review,icon)
+card.append(img,revdiv,name,description,category,pricediv,addCart,remove);
 container.append(card)
 })
 
