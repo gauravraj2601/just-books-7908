@@ -32,4 +32,28 @@
   #product-container button:nth-last-child(1){
    background-color: rgb(217, 33, 135);
   }
+  #slideshow{
+    margin-top: 5px;
+  }
+
+  /* ///////// */
+  #icon{
+    width: 7%;
+  }
+  #revdiv{
+    display: flex;
+    gap: 10px;
+  }
+ #pricediv{
+  display: flex;
+  gap: 15px;
+ }
+ #pricediv h5{
+ 
+  color: rgb(26, 165, 165);
+ }
+ #pricediv h4{
+  text-decoration: line-through;
+  color: rgb(179, 94, 25);
+ }
  

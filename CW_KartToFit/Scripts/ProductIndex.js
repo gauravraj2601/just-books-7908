@@ -3,7 +3,7 @@
     const search= document.getElementById("search");
     search.addEventListener("input",function(){
       let filtered= Data.filter(function(el){
-        if(el.brand.toUpperCase().includes(search.value.toUpperCase()) || 
+        if(el.name.toUpperCase().includes(search.value.toUpperCase()) || 
         el.category.toUpperCase().includes(search.value.toUpperCase())== true){
                 return true;
             }
@@ -39,18 +39,39 @@
     arr.forEach((el)=>{
       let card= document.createElement("div");
       let img= document.createElement("img");
+
+      let revdiv= document.createElement("div");
+      let rating=document.createElement("h3");
+      let review=document.createElement("h3");
+      let icon= document.createElement("img");
+      let pricediv= document.createElement("div");
+      let sp=document.createElement("h3");
+      let MRP=document.createElement("h4");
+      let discount= document.createElement("h5")
+      
+
       let name= document.createElement("h2");
       let price = document.createElement("h3");
       let description= document.createElement("p");
       let Category = document.createElement("h3");
       let addCart= document.createElement("button");
-      let addWishlist = document.createElement("button")
-      addWishlist.setAttribute("id","wishlistbtn")
+      let addWishlist = document.createElement("button");
+      addWishlist.setAttribute("id","wishlistbtn");
+      icon.setAttribute("id","icon");
+      revdiv.setAttribute("id","revdiv");
+      pricediv.setAttribute("id","pricediv")
 
-      img.src = el.img;
-      name.innerText= el.brand;
-      price.innerText= `₹${el.price}`;
-      description.innerText= el.details;
+      rating.innerText= `${el.rating}🌟`;
+      review.innerText = el .review;
+      icon.src= el.icon;
+      sp.innerText =el.SP;
+      MRP.innerText = el.MRP;
+      discount.innerText = el.discount;
+
+      img.src = el.src;
+      name.innerText= el.name;
+      price.innerText= el.price;
+      description.innerText= el.description;
       Category.innerText= el.category;
       addCart.innerText= "Add To Cart"
       addWishlist.innerText = "Whishlist" 
@@ -75,9 +96,9 @@
           alert("Product Added To Wishlist")
         }
     })
-
-
-      card.append(img,name,price,description,Category,addCart,addWishlist);
+      pricediv.append(sp,MRP,discount)
+      revdiv.append(rating,review,icon)
+      card.append(img,revdiv,name,description,Category,pricediv,addCart,addWishlist);
       container.append(card)
 
     })
@@ -101,19 +122,32 @@
 }
 
 
-    let Data;
-    async function fetchData(){
-      try {
-          let res= await fetch("https://dbioz2ek0e.execute-api.ap-south-1.amazonaws.com/mockapi/get-tech-products");
-          res =await res.json();
-           Data=res.data
-          console.log(Data)
-          displaydata(Data)
-          localStorage.setItem("data", JSON.stringify(Data))
-        } catch (error) {
-          console.log(error)
-        }
-    }
-        fetchData()
+    // let Data1;
+    // async function fetchData(){
+    //   try {
+    //       let res= await fetch("https://dbioz2ek0e.execute-api.ap-south-1.amazonaws.com/mockapi/get-tech-products");
+    //       res =await res.json();
+    //        Data1=res.data
+    //       console.log(Data1)
+    //       displaydata(Data1)
+    //       localStorage.setItem("Data", JSON.stringify(Data1))
+    //     } catch (error) {
+    //       console.log(error)
+    //     }
+    // }
+    //     fetchData()
     
- 
+ let Data;
+async function FetchData(){
+  try {
+    let res= await fetch("./APIdata/healthkart.json")
+    res= await res.json();
+    Data= res
+    console.log(Data)
+    displaydata(Data)
+    localStorage.setItem("data", JSON.stringify(Data))
+  } catch (error) {
+    console.log(error)
+  }
+}
+FetchData()

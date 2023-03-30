@@ -8,7 +8,6 @@
   }
   #cart-container>div{
     height: auto;
-    padding-left: 8px;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
     background-color: white;
     padding-bottom: 20px;
@@ -30,7 +29,7 @@
 
   }
   #cart-container button:nth-last-child(1){
-    background-color: red;
+    background-color: rgb(224, 56, 56);
   }
 /* ///////////////////////////////////////////////////////// */
 
@@ -62,39 +61,19 @@ body{
     width: 10%;
     height: auto
 }
-
-
 .nav button img{
     width: 100%;
     height: 40px;
 }
-#search{
-    width: 50%;
-    height: 80%;
-    font-size: 20px;
-    border-radius: 5px;
-    padding-top: 2px;
+.nav>div:nth-child(1) button{
+    width: 130px;
+    height: 60px;
+    margin-top: -5px;
 }
-#search:hover{
-    opacity: 0.3;
+.nav>div:nth-child(1) button img{
+    width: 130px;
+    height: 100%;
 }
-/* #logbtn{
-   width: 80%; 
-   height: 35px;
-   border: none;
-   background-color: rgb(33, 196, 196);
-   border-radius: 5px;
-   color: white;
-   cursor: pointer;
-} */
-#logbtn:hover{
-    background-color: rgb(42, 108, 108);
-}
-/* .nav>div{
-    width: 15%;
-    display: grid;
-    align-items: center;
-} */
 .nav button{
     cursor: pointer;
 }
@@ -105,3 +84,25 @@ body{
     font-size: 130%;
 
 }
+
+  /* ///////// */
+  #icon{
+    width: 7%;
+  }
+  #revdiv{
+    display: flex;
+    gap: 10px;
+  }
+ #pricediv{
+  display: flex;
+  gap: 20px;
+ }
+ #pricediv h5{
+ 
+  color: rgb(26, 165, 165);
+ }
+ #pricediv h4{
+  text-decoration: line-through;
+  color: rgb(179, 94, 25);
+ }
+ 
