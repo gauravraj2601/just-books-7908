@@ -32,9 +32,9 @@ pricediv.setAttribute("id","pricediv");
 rating.innerText= `${el.rating}🌟`;
 review.innerText = el .review;
 icon.src= el.icon;
-sp.innerText =el.SP;
-MRP.innerText = el.MRP;
-discount.innerText = el.discount;
+sp.innerText =`₹${el.SP}`;
+MRP.innerText = `₹${el.MRP}`;
+discount.innerText =`₹${el.discount}` ;
 
 
 addCart.innerText= "Add To Cart"
@@ -61,6 +61,11 @@ addCart.addEventListener("click",function(){
     cartData.push({...el,quantity:1})  // ... it open the cartData to add more data
     localStorage.setItem("cart",JSON.stringify(cartData))
     alert("Product Added To Cart")
+    wishlistData= wishlistData.filter(function(element){
+      return element.id !=el.id;
+    });
+    localStorage.setItem("wishlist",JSON.stringify(wishlistData))
+    displaydata(wishlistData)
   }
 })
 

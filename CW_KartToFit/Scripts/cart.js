@@ -55,14 +55,14 @@ let cartData= JSON.parse(localStorage.getItem("cart")) || [];
       rating.innerText= `${el.rating}🌟`;
       review.innerText = el .review;
       icon.src= el.icon;
-      sp.innerText =el.SP;
-      MRP.innerText = el.MRP;
-      discount.innerText = el.discount;
+      sp.innerText =`₹${el.SP}`;
+      MRP.innerText = `₹${el.MRP}`;
+      discount.innerText =`₹${el.discount}` ;
   
 
       img.src = el.src;
       name.innerText= el.name;
-      price.innerText= el.price;
+      // price.innerText= el.price;
       description.innerText= el.description;
       category.innerText= el.category;
       remove.innerText= "Remove"
@@ -100,8 +100,13 @@ let cartData= JSON.parse(localStorage.getItem("cart")) || [];
     const total= document.getElementById("cart-total");
     let sum=0; 
     for(let i=0;i<cartData.length; i++){
-      sum+=cartData[i].quantity*cartData[i].price;
+      console.log(+cartData[i].SP)
+      console.log(typeof(cartData[i].quantity))
+      console.log(typeof(+cartData[i].SP))
+      sum+=cartData[i].quantity* +cartData[i].SP;
     }
-    total.innerText=sum;
+    total.innerText=`₹ ${sum}`;
+    console.log((sum))
+    
   }
 displaydata(cartData)
