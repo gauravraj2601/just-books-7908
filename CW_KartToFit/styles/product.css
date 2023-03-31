@@ -1,22 +1,44 @@
+*{
+  padding: 0;
+  margin: 0px;
+  box-sizing: border-box;
+}
 #product-container{
     width: 80%;
+    height: auto;
     display: grid;
     grid-template-columns: repeat(4,1fr);
     /* border: 1px solid red; */
     margin: auto;
-    gap: 25px;
+    gap: 10px;
+
+  }
+  #product-container>div>div>div:nth-child(1){
+   justify-content: space-between;
+   margin-right: 15%;
   }
   #product-container>div{
+    width: 100%;
     height: auto;
     padding-left: 8px;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     padding-bottom: 20px;
   }
-  #product-container>div>img{
+  #product-container>div:hover{
+    
+    color: rgb(238, 56, 56);
+    opacity: 0.9;
+  }
+  #product-container>div>div{
+    height: auto;
+  }
+  #product-container>div>div>img{
     width: 100%;
   }
-  #product-container>div>button{
+  
+  #product-container>div>div>button{
+    height: 30px;
    display: grid;
    margin: auto;
    border: none;
@@ -27,15 +49,79 @@
    margin-top: 10px;
    width: 60%;
    color: white ;
-
+    text-align: center;
+    align-items: center;
+  }
+  #product-container>div>div>button:hover{
+    opacity: 0.7;
   }
   #product-container button:nth-last-child(1){
    background-color: rgb(217, 33, 135);
   }
   #slideshow{
     margin-top: 5px;
+    width: 100%;
   }
+  #slideshow2{
+    margin-top: 10px;
 
+  }
+  /* ///////////////// */
+  #product-container2{
+    width: 80%;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    /* border: 1px solid red; */
+    margin: auto;
+    gap: 10px;
+
+  }
+  #product-container2>div>div>div:nth-child(1){
+   justify-content: space-between;
+   margin-right: 15%;
+  }
+  #product-container2>div{
+    width: 100%;
+    height: auto;
+    padding-left: 8px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    background-color: rgb(255, 255, 255);
+    padding-bottom: 20px;
+  }
+  #product-container2>div:hover{
+    
+    color: rgb(238, 56, 56);
+    opacity: 0.9;
+  }
+  #product-container2>div>div{
+    height: auto;
+  }
+  #product-container2>div>div>img{
+    width: 100%;
+  }
+  
+  #product-container2>div>div>button{
+    height: 30px;
+   display: grid;
+   margin: auto;
+   border: none;
+   background-color: rgb(219, 96, 30);
+   border-radius: 5px;
+   font-size: 15px;
+   margin-bottom: 10px;
+   margin-top: 10px;
+   width: 60%;
+   color: white ;
+    text-align: center;
+    align-items: center;
+  }
+  #product-container2>div>div>button:hover{
+    opacity: 0.7;
+  }
+  #product-container2 button:nth-last-child(1){
+   background-color: rgb(217, 33, 135);
+  }
   /* ///////// */
   #icon{
     width: 7%;
@@ -57,3 +143,125 @@
   color: rgb(179, 94, 25);
  }
  
+ /* /////// */
+ .middle{
+  width: 80%;
+  height: auto;
+  margin: auto;
+  display: flex;
+  /* grid-template-columns: repeat(4,1fr); */
+  justify-content: space-between;
+  margin-top: 15px;
+ }
+ .middle>div{
+  width: 100%;
+  height: auto;
+
+ }
+ .middle>div>img{
+  width: 95%;
+
+ }
+ .brandTemp{
+  width: 85%;
+  margin: auto;
+ }
+ .brandTemp>div{
+  width: 100%;
+  margin: auto;
+  
+ }
+ .brandTemp>div img{
+  width:100%
+ }
+ .why>div{
+  width: 70%;
+  display: flex;
+  margin: auto;
+  justify-content: space-between;
+ }
+ .why>div img{
+  width: 20%;
+ }
+ .why>div>div{
+  width: 200px;
+ }
+ .refer{
+  width: 80%;
+  margin: auto;
+  padding-top: 10px;
+ }
+ .refer img{
+  width: 100%;
+ }
+ .footer{
+  width: 100%;
+  
+ }
+ .footer img{
+  width: 100%;
+ }
+
+
+ /* /////// */
+
+ nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  display: inline-block;
+  position: relative;
+}
+
+nav a {
+  display: block;
+  padding: 10px;
+  color: #000;
+  text-decoration: none;
+}
+
+nav a:hover {
+  background-color: #ccc;
+}
+
+
+nav ul ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 0;
+}
+
+nav ul li:hover > ul {
+  display: block;
+}
+
+
+nav ul ul li {
+  display: block;
+}
+
+nav ul ul a {
+  padding: 5px 10px;
+  color: #333;
+  font-size: 14px;
+}
+
+nav ul ul a:hover {
+  background-color: #f2f2f2;
+}
+.home{
+  height: 50px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  margin-top: 13px;
+  padding-left: 10%;
+ font-size: 25px;
+ display: grid;
+ align-items: center;
+}

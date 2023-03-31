@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muscle Builder</title>
+    <link rel="stylesheet" href="styles/muscle.css">
+    
+</head>
+<body>
+  <div id="container">
+    <div class="nav">
+        <div><a href="./index.html"><button id="" type="submit">
+            <img src="img/logo.png" alt="buttonpng" />
+          </button></a></div>           
+            <input type="text" placeholder="Search for products & brands..." id="search">
+            <div >
+                <a href="./signInUp.html"><input type="button" value="Login" id="logbtn"> </a>
+            </div> 
+        <div><a href="./cart.html"><button id="cart-button" type="submit">
+            <img src="img/cartImg.png" alt="buttonpng" />
+          </button></a></div> 
+      
+    </div>
+    <div class="home">
+        <nav>
+          <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="#">Best Seller</a>
+              <ul>
+                <li><a href="./Muscle.html">Muscle Builder</a></li>
+                <li><a href="#">Health Nutrition</a></li>
+                <li><a href="#">Fitness</a></li>
+              </ul>
+            </li>
+            <li><a href="#">Customer Support</a>
+              <ul>
+                <li><a href="./contact.html">Contact</a></li>
+                <li><a href="#">Email us</a></li>
+                <li ><a href="#" >Ask our Experts </a></li>
+                <li><a href="">Returns policy</a></li>
+                <li><a href="">FAQs</a></li>
+                <li><a href="">Terms & Conditions</a></li>
+                <li><a href=""><div><h4>For Support & Order Enqury</h4>
+                  <h2>Call us at: 0124-461623</h2></div></a> </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      
+<div id="filter-div">
+    <div class="nav2">
+        <div>
+            <select id="filter">
+                <option value="">Filter By Category</option>
+                <option value="ON">ON</option>
+                <option value="Fuel ONE">Fuel ONE</option>
+                <option value="HealthKart">HealthKart</option>
+              </select>
+            <select id="filter-price">
+                <option value="">Short Price</option>
+                <option value="LH">Low to High</option>
+                <option value="HL">High to Low</option>
+            </select>
+            <select id="filter-rating">
+                <option value="">Rating</option>
+                <option value="LH">Increasing</option>
+                <option value="HL">Decreasing</option>
+            </select>
+        </div>
+        
+        <div class="wishlist"><a href="./wishlist.html"><button type="submit">
+            <img src="img/wishlist.png" alt="buttonpng" />
+          </button></a></div>
+    </div>
+</div>
+    <div class="cart">
+        <div id="Browse-category">
+            <div><h2>Browse by</h2> <h2>Category</h2></div>
+            <div>
+           <a   href="#"><h style="font-size: large;color: rgb(120, 201, 201);box-sizing: border-box;">KartToFit Best Seller</h></a>
+            <p>Nutrition</p>
+           <a href="#"><h style="color: rgb(120, 201, 201);font-size: large;">Proteins</h></a>
+           
+           <p>Whey Proteins</p>
+            <p> Whey Proteins</p>
+            <p>Whey Protein Isolate</p>
+            <p>   Raw Whey Proteins</p>
+            <p> Whey Protein for Beginners<p>
+           <p> Protein Bars</p>
+           <p> Protein Bars</p>
+           <p> Protein Bars</p>
+           <p> Plant Proteins</p>
+           <p> Protein for Women</p>
+           <p> Protein Blends</p>
+           <p> Protein for Sportsperson</p>
+           <p> Casein Proteins</p>
+           <p> Soy Proteins</p>
+           <p> Protein Water</p>
+           <p> Pre/Post Workout</p>
+           <p> Weight Management</p>
+           <p> Workout Essentials</p>
+           <p> Workout Programs</p>
+           <p> Accessories</p>
+            </div>
+        </div>
+        <div id="productdiv"> 
+            <div>
+            <h1>Best Protein Powder( 100 products )</h1>
+            <h3>🌟🌟🌟🌟 4.0 (32.4k Reviews)</h3>
+            <h7>Protein powder is a popular supplement for people looking to build muscle or support their fitness goals. However, with so many options on the market, it can be overwhelming to choose the best one for your needs. Here is a detailed input on the best protein powder options. Each product is well researched and tested to provide unmatched quality and <span id="dots">...</span><span id="more">effectiveness. Read on to make an informed decision on the best protein powder for you.Read on to make an informed decision on the best protein powder for you effectiveness.</span></h7>
+            <button onclick="myFunction()" id="myBtn">Read more</button>
+        </div>
+        <div id="product-container">      ///</div>   
+     </div>
+    </div>
+</div>
+
+</body>
+
+<script>
+    function myFunction() {
+  var dots = document.getElementById("dots");
+  var moreText = document.getElementById("more");
+  var btnText = document.getElementById("myBtn");
+
+  if (dots.style.display === "none") {
+    dots.style.display = "inline";
+    btnText.innerHTML = "Read more";
+    moreText.style.display = "none";
+  } else {
+    dots.style.display = "none";
+    btnText.innerHTML = "Read less";
+    moreText.style.display = "inline";
+  }
+}
+</script>
+<script src="./Scripts/muscle.js"> </script>
+</html>

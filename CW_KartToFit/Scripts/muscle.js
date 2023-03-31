@@ -35,7 +35,7 @@
    let filterReview = document.getElementById("filter-rating");
     filterReview.addEventListener("change",function(){
       if(filterReview.value==""){ 
-          location.reload()
+        window.location.href="./Muscle.html"
       }
       else if(filterReview.value=="LH"){
         let filterReviewData= Data.sort((a,b)=>{
@@ -60,7 +60,7 @@
         // displaydata(Data)
         location.reload();
       }
-      else{
+      else {
         let filteredData= Data.filter((el)=>{
           return el.category ==filter.value
         })
@@ -70,7 +70,7 @@
     })
     
     const container= document.getElementById("product-container")
-    const container2= document.getElementById("product-container2")
+    // const container2= document.getElementById("product-container2")
     const cartData= JSON.parse(localStorage.getItem("cart")) || []
     const whishlistData =JSON.parse(localStorage.getItem("wishlist")) || []
 
@@ -108,9 +108,9 @@
       rating.innerText= `${el.rating}🌟`;
       review.innerText = el .review;
       icon.src= el.icon;
-      sp.innerText =`₹${el.SP}`;
-      MRP.innerText =`₹${el.MRP}`;
-      discount.innerText = `₹${el.discount}` ;
+      sp.innerText =el.SP;
+      MRP.innerText = el.MRP;
+      discount.innerText = el.discount;
 
       img.src = el.src;
       name.innerText= el.name;
