@@ -201,3 +201,63 @@
  .footer img{
   width: 100%;
  }
+
+
+ /* /////// */
+
+ nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  display: inline-block;
+  position: relative;
+}
+
+nav a {
+  display: block;
+  padding: 10px;
+  color: #000;
+  text-decoration: none;
+}
+
+nav a:hover {
+  background-color: #ccc;
+}
+
+
+nav ul ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 0;
+}
+
+nav ul li:hover > ul {
+  display: block;
+}
+
+
+nav ul ul li {
+  display: block;
+}
+
+nav ul ul a {
+  padding: 5px 10px;
+  color: #333;
+  font-size: 14px;
+}
+
+nav ul ul a:hover {
+  background-color: #f2f2f2;
+}
+.home{
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  margin-top: 13px;
+ 
+}
