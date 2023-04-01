@@ -4,9 +4,191 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Checkout Page</title>
+    <style>
+        body{
+            background-color: rgb(246, 243, 243);
+        }
+    nav {
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    /* display: inline-block; */
+    margin-right: 20px;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+ul img{
+    width: 30%;
+}
+#container1{
+    width: 100%;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+#container1>div{
+    width: 80%;
+    margin: auto;
+
+}
+
+#cart img{
+    padding-top: 10px;
+    width: 30%;
+}
+.container {
+	max-width: 600px;
+	margin:  auto;
+	padding: 20px;
+	background-color: #f2f2f2;
+	border-radius: 10px;
+	box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    
+}
+.container>div{
+    width: 50%;
+    margin: auto;
+    /* background-color: red; */
+}
+
+label {
+	display: block;
+	margin-top: 10px
+}
+
+
+    </style>
 </head>
 <body>
-    aaaaaaaaa
+    <div id="container1">
+        <div>
+            <nav>
+                <ul>
+                  <li><a href="./index.html"><img src="./img/logo.png" alt=""></a></li>
+                 </ul> 
+                  <a id="cart" href="./cart.html"><img src="./img/cartImg.png" alt=""></a>
+              </nav>
+        </div>
+        <h1 style="text-align: center;margin-top: -50px;color:rgba(189, 46, 46, 0.992) ;font-size: 45px;">Checkout</h1>
+    </div>
+
+
+    <div class="container">
+        <div>
+            <form id="checkout-form">
+                <h1>Address</h1>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+    
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address" required>
+    
+                <label for="city">City:</label>
+                <input type="text" id="city" name="city" required>
+    
+                <label for="state">State:</label>
+                <input type="text" id="state" name="state" required>
+    
+                <label for="zip">Zip Code:</label>
+                <input type="number" id="zip" name="zip" required>
+                
+                <h1>Payment details</h1>
+            <label for="card-number">Credit Card Number:</label>
+			<input type="tel"class="cc-number" pattern="\d*" maxlength="16"  placeholder="xxxx xxxx xxxx" required>
+
+			<label for="expiry">Valid upto:</label>
+			<input type="tel" id="expiry" name="expiry" maxlength="5" placeholder="mm/yy" required>
+
+			<label for="cvv">CVV</label>
+			<input type="tel" id="cvv" name="cvv"  maxlength="3" placeholder="◙ ◙ ◙" required>
+            <label for="#"></label>
+			<input type="submit" value="Submit">
+
+            </form>
+            <label for=""></label>
+            <form id="otp-submit">
+                <input type="text"
+                       inputmode="numeric"
+                       autocomplete="one-time-code"
+                       pattern="\d{6}" placeholder="6-digit OTP"
+                       required>
+                       <label for="#"></label>
+                       <input type="submit" name="value" value="Submit" id="">
+              </form>
+        </div>
+        
+    </div>
+
+        <div style="text-align: center;background-color: rgba(189, 46, 46, 0.992);width: 640px;margin: auto;border-radius: 5px;display: flex;">
+            <div style="padding-left: 15px;"><h2>Click on Submit to Pay Total Amount = </h2></div>
+            <div><h2 id="totalPayment">0</h2></div>
+            
+        </div> 
 </body>
+<script>
+
+    let cartData= JSON.parse(localStorage.getItem("cart")) 
+    let Payment= JSON.parse(localStorage.getItem("payment"))
+    let totalPayment= document.getElementById("totalPayment")
+    totalPayment.innerText=` ₹ ${Payment}`
+
+
+// ///////////////////////
+function check(){
+
+
+    if(Payment<=0){
+         alert('Add Product to Cart')
+         window.location.href="./index.html"
+    }
+    else{
+
+   
+     let form= document.getElementById("checkout-form");
+
+    form.addEventListener("submit",function(e){
+        e.preventDefault();
+        
+        function generateOTP() {
+          var digits = '0123456789';
+          let OTP = '';
+          for (let i = 0; i < 6; i++ ) {
+              OTP += digits[Math.floor(Math.random() * 10)];
+          }
+          return OTP;
+      }
+        alert(`OTP of 6 digits for Payment: ${generateOTP()}`)
+
+    })
+    let cartData= JSON.parse(localStorage.getItem("cart"))
+    let formOtp= document.getElementById("otp-submit")
+    
+    formOtp.addEventListener("submit",function(e){
+        e.preventDefault();
+        
+         alert("Payment Successfull!")
+         window.location.href="./order-placed.html"
+         let data=""
+         localStorage.setItem("cart",JSON.stringify(data))
+
+    })
+}
+}
+check()
+ </script>
+
 </html>

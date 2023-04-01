@@ -11,8 +11,9 @@
     /* border: 1px solid red; */
     margin: auto;
     gap: 10px;
-
+    background-color: red;
   }
+
   #product-container>div>div>div:nth-child(1){
    justify-content: space-between;
    margin-right: 15%;
@@ -265,3 +266,24 @@ nav ul ul a:hover {
  display: grid;
  align-items: center;
 }
+
+
+@media only screen and (max-width:600px) and (min-width:321) {
+  #product-container{
+    grid-template-columns: repeat(2,1fr);
+    background-color: yellow;
+  }
+  *{
+    background-color: yellow;
+  }
+}
+@media only screen and (max-width: 300px) {
+  #product-container{
+
+       grid-template-columns: repeat(1,1fr);
+       height: 200px;
+   }
+   *{
+    background-color: yellow;
+   }
+  }

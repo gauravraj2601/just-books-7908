@@ -13,12 +13,6 @@ search.addEventListener("input",function(){
 })
 
 
-
-
-
-
-
-
 let cartData= JSON.parse(localStorage.getItem("cart")) || [];
     const container= document.getElementById("cart-container");
     console.log(typeof(cartData))
@@ -107,6 +101,7 @@ let cartData= JSON.parse(localStorage.getItem("cart")) || [];
     }
     total.innerText=`₹ ${sum}`;
     console.log((sum))
+    localStorage.setItem("payment",JSON.stringify(sum))
     
   }
 displaydata(cartData)
