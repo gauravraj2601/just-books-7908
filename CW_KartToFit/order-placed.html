@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Placed</title>
+    <style>
+        .container{
+            width: 700px;
+            margin: auto;
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+            height: 700px;
+        }
+        .container:hover{
+        transform: scale(1.05);
+		background: #fcfcf9;
+		z-index: 2;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+		/* box-shadow: 2px 2px 2px #b6a8a8; */
+        }
+        .card{
+            width: 600px;
+            margin: auto;
+            height: auto;
+            padding-top: 20px;
+        }
+        .card img{
+            width: 100%;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <img src="img/logo.png" alt="error">
+            <img src="img/RorderPlaced.png" alt="err">
+        </div>
+    </div>
+</body>
+
+<script>
+    let div= document.querySelector("div");
+
+    div.addEventListener("click",function(){
+        window.location.href="./index.html"
+    })
+    
+</script>
+</html>
