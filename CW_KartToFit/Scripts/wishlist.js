@@ -41,7 +41,7 @@ addCart.innerText= "Add To Cart"
 img.src = el.src;
 name.innerText= el.name;
 price.innerText= el.price;
-description.innerText= el.description;
+description.innerText= "Category";
 category.innerText= el.category;
 remove.innerText= "Remove"
 
