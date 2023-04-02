@@ -2,6 +2,10 @@
   padding: 0;
   margin: 0px;
   box-sizing: border-box;
+  font-family: Montserrat, sans-serif;
+	/* font-size: 14px; */
+	font-style: normal;
+	font-variant: normal;
 }
 #product-container{
     width: 80%;
@@ -11,7 +15,6 @@
     /* border: 1px solid red; */
     margin: auto;
     gap: 10px;
-    background-color: red;
   }
 
   #product-container>div>div>div:nth-child(1){
@@ -27,9 +30,12 @@
     padding-bottom: 20px;
   }
   #product-container>div:hover{
-    
+    transform: scale(1.05);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
     color: rgb(238, 56, 56);
-    opacity: 0.9;
+    /* background-color: #f8f2f2;
+     */
+     border: 1px solid rgb(194, 183, 183);
   }
   #product-container>div>div{
     height: auto;
@@ -43,21 +49,29 @@
    display: grid;
    margin: auto;
    border: none;
-   background-color: rgb(219, 96, 30);
+   background-color: rgb(255, 250, 247);
+   border: 2px solid rgb(244, 105, 30);
    border-radius: 5px;
    font-size: 15px;
    margin-bottom: 10px;
    margin-top: 10px;
+  font-size: bold;
    width: 60%;
-   color: white ;
+   color:rgb(244, 105, 30);
     text-align: center;
     align-items: center;
   }
   #product-container>div>div>button:hover{
-    opacity: 0.7;
+    background-color:rgb(244, 105, 30);
+    color: white;
   }
   #product-container button:nth-last-child(1){
-   background-color: rgb(217, 33, 135);
+   background-color: rgb(248, 244, 246);
+   color: rgb(217, 33, 135);
+   border: 1px solid rgb(217, 33, 135);
+  }
+  #product-container button:nth-last-child(1):hover{
+    background-color: rgb(217, 33, 135);
   }
   #slideshow{
     margin-top: 5px;
@@ -268,22 +282,24 @@ nav ul ul a:hover {
 }
 
 
-@media only screen and (max-width:600px) and (min-width:321) {
-  #product-container{
-    grid-template-columns: repeat(2,1fr);
-    background-color: yellow;
-  }
-  *{
-    background-color: yellow;
-  }
-}
-@media only screen and (max-width: 300px) {
-  #product-container{
 
-       grid-template-columns: repeat(1,1fr);
-       height: 200px;
-   }
-   *{
-    background-color: yellow;
-   }
-  }
+
+  @media only screen and (max-width: 420px) and (min-width:221px) {
+    #product-container{
+  
+           grid-template-columns: repeat(2,1fr);
+           /* height: 300px; */
+       }
+       #container{
+        width: 144%;
+
+       }
+    }
+    @media only screen and (max-width: 220px) {
+      #product-container{
+  
+           grid-template-columns: repeat(1,1fr);
+           /* height: 200px; */
+       }
+    }
+  
