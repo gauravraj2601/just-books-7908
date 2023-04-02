@@ -20,51 +20,11 @@
       #signup {
         width: 40%;
         margin: auto;
-        padding-top: 40px;
         padding-left: 30%;
       }
       *{
-       font-style: normal;
-	    font-variant: normal;
-}
-
-
-label {
-	display: block;
-	margin-top: 10px
-  
-}
-#login{
-  background-color: white;
-  color:rgb(51, 51, 47) ;
-  border: 1px solid rgb(173, 173, 159);
-  width: 50px;
-  height: 25px;
-  border-radius: 5px;
- font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
-#login:hover{
-  background-color: rgb(173, 173, 159);
-  color: white;
-  border: 1px solid rgb(255, 255, 255);
-}
-
-#logbtn{
-    width: 66px; 
-    height: 35px;
-    border: none;
-    background-color: rgb(33, 196, 196);
-    border-radius: 5px;
-    color: white;
-    cursor: pointer;
-    margin-top: 6px;
-    padding: 5px;
-    font-size: medium;
- }
-#logbtn:hover{
-    background-color: rgb(231, 231, 231);
-    color:rgb(33, 196, 196) ;
-    border: 1px solid rgb(33, 196, 196);
+  font-style: normal;
+	font-variant: normal;
 }
 /* nav */
     nav {
@@ -108,6 +68,48 @@ ul img{
     width: 30%;
 }
 
+/* //// */
+
+
+#login{
+  background-color: white;
+  color:rgb(51, 51, 47) ;
+  border: 1px solid rgb(173, 173, 159);
+  width: 55px;
+  height: 25px;
+  border-radius: 5px;
+ font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+#login:hover{
+  background-color: rgb(173, 173, 159);
+  color: white;
+  border: 1px solid rgb(255, 255, 255);
+}
+
+label {
+	display: block;
+	margin-top: 10px
+  
+}
+#logbtn{
+    width: 66px; 
+    height: 35px;
+    border: none;
+    background-color: rgb(33, 196, 196);
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    margin-top: 6px;
+    padding: 5px;
+    font-size: medium;
+ }
+#logbtn:hover{
+    background-color: rgb(231, 231, 231);
+    color:rgb(33, 196, 196) ;
+    border: 1px solid rgb(33, 196, 196);
+}
+
+
     </style>
 </head>
 <body>
@@ -117,24 +119,26 @@ ul img{
                 <ul>
                   <li><a href="./index.html"><img src="./img/logo.png" alt=""></a></li>
                  </ul> 
-                  <a id="cart" href="./signIn.html"><input type="button" value="SignUp" id="logbtn"></a>
+                  <a id="cart" href="./login.html"><input type="button" value="Login" id="logbtn"></a>
               </nav>
         </div>
        
     </div>
-
-
   <div class="bck">
+
     <div id="signup">
-      <h1>Please Enter Your Details for Login</h1>
+      <h1>Please Enter Your Details for SignUp</h1>
     <form>
+      <label for="username">Name:</label>
+      <input type="text" id="username" name="username" placeholder="Name" required>
+
       <label for="email">Email:</label>
       <input type="email" id="email" placeholder="Email" required>
 
       <label for="password">Password:</label>
       <input type="password" id="password" name="password" placeholder="Password" required>
       <label for=""></label>
-      <input type="submit" value="LogIn" id="login">
+      <input type="submit" value="SignUp" id="login">
     </form>
   </div>
 
@@ -145,18 +149,26 @@ ul img{
 <script>
 
   const form= document.querySelector("form");
-  let userData=JSON.parse(localStorage.getItem("user-data"))
+  let userData=JSON.parse(localStorage.getItem("user-data")) || []
   console.log(userData)
 
   form.addEventListener("submit",function(e){
     e.preventDefault();
     if(checkAvail()){
-      alert("Login Successfull")
-      window.location.href="./index.html"
+      alert("User Already Exist Plz LogIn")
+      window.location.href="./login.html"
     }
     else{
-      alert("SignUp First")
-      window.location.href="./signIn.html"
+      let Details={
+      name:form.name.value,
+      email:form.email.value,
+      password: form.password.value,
+    }
+    userData.push(Details)
+    console.log(Details)
+      localStorage.setItem("user-data",JSON.stringify(userData))
+      alert ("SignUp Successful")
+      window.location.href="./login.html"
     }
   })
 

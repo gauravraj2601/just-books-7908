@@ -51,7 +51,7 @@ ul img{
     width: 30%;
 }
 .container {
-	max-width: 600px;
+	max-width: 50%;
 	margin:  auto;
 	padding: 20px;
 	background-color: #f2f2f2;
@@ -69,8 +69,19 @@ label {
 	display: block;
 	margin-top: 10px
 }
+#submit{
+    font-size: medium;
+    border-radius: 5px;
+    border: 1px solid white;
+    color: white;
+    background-color: rgba(189, 46, 46, 0.992) ;
+}
+#submit:hover{
+    border: 1px solid rgba(189, 46, 46, 0.992) ;
+    background-color: white;
+    color: rgba(189, 46, 46, 0.992) ;
 
-
+}
     </style>
 </head>
 <body>
@@ -83,7 +94,7 @@ label {
                   <a id="cart" href="./cart.html"><img src="./img/cartImg.png" alt=""></a>
               </nav>
         </div>
-        <h1 style="text-align: center;margin-top: -50px;color:rgba(189, 46, 46, 0.992) ;font-size: 45px;">Checkout</h1>
+        <h1 id="h1check" style="text-align: center;margin-top: -45px;color:rgba(189, 46, 46, 0.992) ;">Checkout</h1>
     </div>
 
 
@@ -116,7 +127,7 @@ label {
 			<label for="cvv">CVV</label>
 			<input type="tel" id="cvv" name="cvv"  maxlength="3" placeholder="◙ ◙ ◙" required>
             <label for="#"></label>
-			<input type="submit" value="Submit">
+			<input type="submit" value="Submit" id="submit">
 
             </form>
             <label for=""></label>
@@ -127,14 +138,14 @@ label {
                        pattern="\d{6}" placeholder="6-digit OTP"
                        required>
                        <label for="#"></label>
-                       <input type="submit" name="value" value="Submit" id="">
+                       <input type="submit" name="value" value="Submit" id="submit">
               </form>
         </div>
         
     </div>
 
-        <div style="text-align: center;background-color: rgba(189, 46, 46, 0.992);width: 640px;margin: auto;border-radius: 5px;display: flex;">
-            <div style="padding-left: 15px;"><h2>Click on Submit to Pay Total Amount = </h2></div>
+        <div style="text-align: center;background-color: rgba(189, 46, 46, 0.992);width:53%;margin: auto;border-radius: 5px;display: flex;">
+            <div style="padding-left: 15px;width: 70%;"><h2>Click on Submit to Pay Total Amount  </h2></div>
             <div><h2 id="totalPayment">0</h2></div>
             
         </div> 
@@ -144,7 +155,7 @@ label {
     let cartData= JSON.parse(localStorage.getItem("cart")) 
     let Payment= JSON.parse(localStorage.getItem("payment"))
     let totalPayment= document.getElementById("totalPayment")
-    totalPayment.innerText=` ₹ ${Payment}`
+    totalPayment.innerText=`= ₹ ${Payment}`
 
 
 // ///////////////////////
